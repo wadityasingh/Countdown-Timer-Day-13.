@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown Timer</title>
+    <meta
+      name="description"
+      content="Count down to your next important moment with a clean, accurate countdown timer."
+    />
+    <meta property="og:title" content="Countdown Timer" />
+    <meta
+      property="og:description"
+      content="Count down to your next important moment with a clean, accurate countdown timer."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@600;700&family=Plus+Jakarta+Sans:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page-wrapper">
+      <div class="container">
+        <header class="page-header">
+          <h1 class="page-title">Countdown Timer</h1>
+          <p class="page-subtitle">Count down to your next important moment.</p>
+        </header>
+
+        <section class="countdown-card" aria-label="Countdown timer and controls">
+          <form id="countdown-form" class="controls-form" novalidate>
+            <div class="input-group">
+              <label for="target-datetime" class="input-label">
+                Select target date and time
+              </label>
+              <input
+                type="datetime-local"
+                id="target-datetime"
+                name="targetDatetime"
+                class="datetime-input"
+                required
+                aria-describedby="feedback-message"
+              />
+            </div>
+
+            <div class="button-group">
+              <button type="submit" id="start-button" class="btn btn-primary">
+                Start Countdown
+              </button>
+              <button type="button" id="reset-button" class="btn btn-secondary">
+                Reset
+              </button>
+            </div>
+          </form>
+
+          <p
+            id="feedback-message"
+            class="feedback-message"
+            role="status"
+            aria-live="polite"
+            hidden
+          ></p>
+
+          <div class="timer-grid" role="timer" aria-label="Time remaining">
+            <div class="time-box">
+              <span id="days" class="time-number">00</span>
+              <span class="time-label">DAYS</span>
+            </div>
+
+            <div class="time-box">
+              <span id="hours" class="time-number">00</span>
+              <span class="time-label">HOURS</span>
+            </div>
+
+            <div class="time-box">
+              <span id="minutes" class="time-number">00</span>
+              <span class="time-label">MINUTES</span>
+            </div>
+
+            <div class="time-box">
+              <span id="seconds" class="time-number">00</span>
+              <span class="time-label">SECONDS</span>
+            </div>
+          </div>
+
+          <div class="target-summary">
+            <span class="summary-label">Target date:</span>
+            <time id="target-display" class="summary-date" datetime="">
+              Loading...
+            </time>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
